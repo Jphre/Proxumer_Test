@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="th">
+    <head>
+        <title>Sale Here Test page2</title>
+        <link rel="stylesheet" type="text/css" href="form.css">
+        <meta charset="utf-8">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <style>
+            @font-face {
+                font-family: Prompt;
+                src: url(Prompt-Regular.tff);
+            }
+            body {
+                background-color: #b31315;
+                font-family: Prompt;
+                font-weight: bold;
+            }
+            /* Style the Container */
+            .ContainerWhite {
+                background-color: #ffffff ;
+                border-radius: 20px;
+                height: 90vh;
+            }
+            /* Style the title */
+            .title {
+                font-size: 37px;
+                color: #383838;
+                padding: 30px;
+                text-align: center;
+            }
+            /* Style the button create room */
+            #Next3-1{
+                font-family: Prompt;
+                color: #ffffff;
+                font-size: 34px;
+                display: block;
+                margin: auto;
+                padding: 5px 30px;
+                border-radius: 10px;
+                background-image: radial-gradient(ellipse farthest-corner at top left, #c41417 0%, #b31315 100%);
+            }
+            /* Style the text button create room*/
+            #Next3-1:hover {
+                color: #6f6f6f;
+                background-color: #c41417;
+            }
+            /* Style the button create room */
+            #Next3-2{
+                font-family: Prompt;
+                color: #707070;
+                font-size: 34px;
+                display: block;
+                margin: auto;
+                padding: 10px;
+                border-style: none;
+                border-radius: 10px;
+                background-color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ContainerWhite" >
+            <p class="title">คุณ <span id="spName"></span> <br/></p>
+            <form>
+                <input type="button" id="Next3-1" value="สร้างห้องใหม่"><br/>
+                <input type="button" id="Next3-2" value="เข้าร่วมแชท">
+            </form>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // get value from storage
+            $("#spName").html( localStorage.getItem("sName"));
+            // button click
+            $("input").click(function(){
+                if (this.id == 'Next3-1') {
+                    window.location="Test sale here page3(1).html";
+                }else if(this.id == 'Next3-2'){
+                    window.location="Test sale here page3(2).html";
+                }
+            });
+        });
+        </script>
+</html>

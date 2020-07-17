@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="th">
+    <head>
+        <title>Sale Here Test</title>
+        <link rel="stylesheet" type="text/css" href="form.css">
+        <meta charset="utf-8">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <style>
+            @font-face {
+                font-family: Prompt;
+                src: url(Prompt-Regular.tff);
+            }
+            body {
+                background-color: #b31315;
+                font-family: Prompt;
+            }
+            /* Style the Container */
+            .ContainerWhite {
+                background-color: #ffffff ;
+                border-radius: 20px;
+                height: 90vh;
+            }
+            /* Style the title */
+            .title {
+                font-size: 37px;
+                color: #383838;
+                font-weight: bold;
+                padding: 30px;
+                text-align: center;
+            }
+            /* Style the button */
+            form [type=button] {
+                color: #ffffff;
+                font-size: 34px;
+                display: block;
+                font-family: Prompt;
+                margin: 20px auto;
+                padding: 10px 20px ;
+                border-radius: 10px;
+                background-image: radial-gradient(ellipse farthest-corner at top left, #c41417 0%, #b31315 100%);
+            }
+            /* Style the text button */
+            form [type=button]:hover {
+                color: #6f6f6f;
+                background-color: #c41417;
+            }
+            /* Style the Input */
+            form [type=text] {
+                display: block;
+                margin: auto;
+                height: 60px;
+                font-family: Prompt;
+                color: #4e4e4e;
+                border: 3px solid lightgray;
+                border-radius: 10px;
+                font-size: 34px;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="ContainerWhite" >
+            <p class="title">ชื่อของคุณ</p>
+            <form>
+                <input type="text" name="Username" id="Username" onkeyup="myFunction()"/>
+                <input type="button" id="Next2" value="ยืนยัน">
+            </form>
+        </div>
+    </body>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        if(typeof(Storage) == "undefined"){
+            alert("Not storage support");
+        }
+        $("#Next2").click(function(){
+            localStorage.setItem("sName",$("#Username").val());
+            window.location="Test sale here page2.html";
+        })
+    })
+    </script>
+</html>
